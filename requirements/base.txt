@@ -1,0 +1,19 @@
+pytz==2019.3  # https://github.com/stub42/pytz
+redis==3.3.11  # https://github.com/antirez/redis
+
+# Django
+# ------------------------------------------------------------------------------
+django==2.2.9  # pyup: < 3.0  # https://www.djangoproject.com/
+django-environ==0.4.5  # https://github.com/joke2k/django-environ
+django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
+django-redis==4.11.0  # https://github.com/niwinz/django-redis
+mysqlclient==1.4.6
+
+
+# Django REST Framework
+djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
+PyYAML==5.2  # https://github.com/yaml/pyyaml
+coreapi==2.3.3  # https://github.com/core-api/python-client
+
+# Logging
+django-request-logging==0.7.0  # https://github.com/Rhumbix/django-request-logging

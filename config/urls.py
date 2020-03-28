@@ -26,6 +26,5 @@ urlpatterns = [
         name="discord_search_bot-schema",  # noqa F405
     ),
     # Example Url Config
-    path("example/", include("discord_search_bot.example.urls", namespace="example")),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

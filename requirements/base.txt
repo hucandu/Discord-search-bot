@@ -17,3 +17,6 @@ coreapi==2.3.3  # https://github.com/core-api/python-client
 
 # Logging
 django-request-logging==0.7.0  # https://github.com/Rhumbix/django-request-logging
+bs4
+lxml
+discord

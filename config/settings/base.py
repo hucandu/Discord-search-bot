@@ -53,7 +53,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     # Custom apps go here
-    "discord_search_bot.example.apps.ExampleConfig",
+     "discord_search_bot.src.apps.SrcConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -132,3 +132,4 @@ REST_FRAMEWORK = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+DISCORD_TOKEN = "NjkzMDY4MDg3Njk1NzY5NjYw.Xn4VjA.O0LqAUYNhwLPMjwy8u8Ehkw2oaI"

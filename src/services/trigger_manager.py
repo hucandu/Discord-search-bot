@@ -68,6 +68,7 @@ class TriggerManager:
 
         """
         search_text = self.search_bot_helper.get_search_item()
+        self.search_bot_helper.check_validation(search_text)
         links = scrape_service.google_search_scrape(search_text)
         embed = self.search_bot_helper.create_search_embed(discord, links)
         self.search_history_manager.record_search_history(
@@ -88,6 +89,7 @@ class TriggerManager:
 
         """
         recent_keyword = self.search_bot_helper.get_recent_keyword()
+        self.search_bot_helper.check_validation(recent_keyword)
         search_history = self.search_history_manager.get_search_history(
             self.message.author, recent_keyword
         )

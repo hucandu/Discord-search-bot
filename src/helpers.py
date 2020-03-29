@@ -11,7 +11,9 @@ from src.constants import (
     HISTORY_EMBED_TITLE,
     HISTORY_EMBED_DESCRIPTION,
     HISTORY_COLOR_CODE,
+    INCORRECT_INPUT_TYPE
 )
+from .exceptions import ValidationException
 
 
 class SearchBotHelpers:
@@ -135,6 +137,10 @@ class SearchBotHelpers:
                 inline=False,
             )
         return embed
+
+    def check_validation(self, string):
+        if not all(ord(charecter) < 128 for charecter in string):
+            raise ValidationException(INCORRECT_INPUT_TYPE)
 
     def _embed_construct(self, client, title, description, color_code):
         """Short summary.

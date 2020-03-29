@@ -1,6 +1,7 @@
 import discord
 from .services.trigger_manager import TriggerManager
-from .constants import LOGGED_IN_LOG, PROCESSED_LOG
+from .constants import LOGGED_IN_LOG, PROCESSED_LOG, SYSTEM_ERROR
+from .exceptions import ValidationException
 
 
 class SearchBotConnectionView(discord.Client):
@@ -36,11 +37,20 @@ class SearchBotConnectionView(discord.Client):
             Description of returned object.
 
         """
-        trigger_manager = TriggerManager(message)
-        reply, embed = trigger_manager.perform_operation()
-        if reply or embed:
-            await message.channel.send(reply, embed=embed)
-            # used print instead of LOG
-            print(
-                PROCESSED_LOG.format(content=message.content, user=message.author.name)
-            )
+        try:
+            trigger_manager = TriggerManager(message)
+            reply, embed = trigger_manager.perform_operation()
+            if reply or embed:
+                await message.channel.send(reply, embed=embed)
+                # used print instead of LOG
+                print(
+                    PROCESSED_LOG.format(
+                        content=message.content, user=message.author.name
+                    )
+                )
+        except ValidationException as e:
+            print(str(e))
+            await message.channel.send(str(e))
+        except Exception as e:
+            print(str(e))
+            await message.channel.send(SYSTEM_ERROR)

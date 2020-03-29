@@ -30,7 +30,10 @@ USE_TZ = True
 # DATABASES
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {"default": env.db("DATABASE_URL")}
+DATABASES = {
+    "default": env.db("DATABASE_URL"),
+    "OPTIONS": {"charset": "utf8mb4"},
+}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 
 # URLS
@@ -45,7 +48,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 DJANGO_APPS = [
     # Django default apps
     "django.contrib.contenttypes",
-    "django.contrib.auth"
+    "django.contrib.auth",
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",
@@ -132,4 +135,4 @@ REST_FRAMEWORK = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-DISCORD_TOKEN = env.str('DISCORD_TOKEN')
+DISCORD_TOKEN = env.str("DISCORD_TOKEN")

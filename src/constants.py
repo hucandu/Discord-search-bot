@@ -12,3 +12,5 @@ HISTORY_EMBED_DESCRIPTION = "List of all your recent search history related to {
 HISTORY_COLOR_CODE = 0xFF0000
 LOGGED_IN_LOG = "Logged on as {0}!"
 PROCESSED_LOG = "processed {content} by {user}"
+SYSTEM_ERROR = "OOPS! seems like an error has occured"
+INCORRECT_INPUT_TYPE = "Sorry! unicode is not supported"

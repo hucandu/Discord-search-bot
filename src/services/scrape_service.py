@@ -3,10 +3,23 @@ from bs4 import BeautifulSoup
 import re
 import urllib.parse
 from urllib.parse import urlparse
-from src.constants import GOOGLE_SEARCH_QUERY,LINK_LIMIT
+from src.constants import GOOGLE_SEARCH_QUERY, LINK_LIMIT
 
 
 def google_search_scrape(query):
+    """Short summary.
+
+    A bs4 based scraper that pulls all anchor tags
+    from the search and appends to result if found appropriate
+
+    Parameters
+    ----------
+    query : string
+    Returns
+    -------
+    list of string
+
+    """
     cleaned_url = []
     url = GOOGLE_SEARCH_QUERY.format(query)
     html = requests.get(url)

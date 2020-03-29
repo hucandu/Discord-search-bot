@@ -3,6 +3,11 @@ from src.helpers import SearchBotHelpers
 
 
 class SearchHistoryManager:
+    """Short summary.
+
+    A manager to store and retrive history of recent searches
+
+    """
     def record_search_history(self, user, content):
         username = SearchBotHelpers.construct_username(user.name, user.discriminator)
         user_instance, _ = User.objects.get_or_create(

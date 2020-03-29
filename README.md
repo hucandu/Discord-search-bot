@@ -13,8 +13,6 @@ Create environment configuration
 
 Put the following in `.env` file
 ```dotenv
-REDIS_URL=redis://redis:6379/0
-# REDIS_URL=redis://localhost:6379/0
 
 DATABASE_URL=mysql://root:root@mysql/discord_search_bot
 # DATABASE_URL=mysql://user:password@localhost:3306/dbname
@@ -34,22 +32,21 @@ Install Dependencies
 $(venv) pip install -r requirements/local.txt
 ```
 
-Start Server
+Start Script
 ```sh
-$(venv) python manage.py runserver 0.0.0.0:8000
+$(venv) python manage.py start_connection
 ```
 
 ### Using Docker
 
 Build Image
 ```sh
-$ docker-compose -f docker-compose.dev.yml build
+$ docker-compose build
 ```
 
 Run container
 ```sh
-$ docker-compose -f docker-compose.dev.yml up -d
-$ docker-compose logs -f servicename
+$ docker-compose run --rm django python manage.py start_connection
 ```
 
 ### Type checks
@@ -58,22 +55,4 @@ Running type checks with mypy:
 
 ```sh
 $ mypy discord_search_bot
-```
-
-### Test coverage
-To run the tests, check your test coverage, and generate an HTML coverage report::
-```sh
-$ coverage run -m pytest
-$ coverage html
-$ open htmlcov/index.html
-```
-To check the report in console:
-```sh
-$ coverage report -m
-```
-
-### Running tests with pytest
-Use [pytest-django](https://pytest-django.readthedocs.io/en/latest/index.html) to write your test cases
-```sh
-$ pytest
 ```

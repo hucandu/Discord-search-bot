@@ -16,6 +16,8 @@ Put the following in `.env` file
 
 DATABASE_URL=mysql://root:root@mysql/discord_search_bot
 # DATABASE_URL=mysql://user:password@localhost:3306/dbname
+DISCORD_TOKEN=<Discord auth token>
+
 ```
 
 

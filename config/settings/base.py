@@ -45,7 +45,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 DJANGO_APPS = [
     # Django default apps
     "django.contrib.contenttypes",
-    "django.contrib.auth",
+    "django.contrib.auth"
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",
@@ -53,7 +53,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     # Custom apps go here
-     "discord_search_bot.src.apps.SrcConfig",
+    "src"
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

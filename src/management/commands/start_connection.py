@@ -1,5 +1,5 @@
 from django.conf import settings
-from discord_search_bot.src.views import SearchBotConnectionView
+from src.views import SearchBotConnectionView
 from django.core.management.base import BaseCommand, CommandError
 
 

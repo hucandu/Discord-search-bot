@@ -11,7 +11,7 @@ services:
     image: discord_search_bot_local_django
     depends_on:
       - mysql
-      - redis
+      # - redis
     volumes:
       - .:/app
     ports:
@@ -31,5 +31,5 @@ services:
     volumes:
       - discord_search_bot_local_mysql_data:/var/lib/mysql
 
-  redis:
-    image: redis:5.0
+  # redis:
+  #   image: redis:5.0

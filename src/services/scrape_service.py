@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import re
 import urllib.parse
 from urllib.parse import urlparse
-from discord_search_bot.src.constants import GOOGLE_SEARCH_QUERY,LINK_LIMIT
+from src.constants import GOOGLE_SEARCH_QUERY,LINK_LIMIT
 
 
 def google_search_scrape(query):

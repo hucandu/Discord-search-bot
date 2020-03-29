@@ -11,7 +11,7 @@ def google_search_scrape(query):
     url = GOOGLE_SEARCH_QUERY.format(query)
     html = requests.get(url)
     if html.status_code == 200:
-        soup = BeautifulSoup(html.text, "lxml")
+        soup = BeautifulSoup(html.text, "html.parser")
         anchor_tags = soup.find_all("a")
         for anchor_tag in anchor_tags:
             href = anchor_tag.get("href")

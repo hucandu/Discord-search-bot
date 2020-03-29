@@ -13,8 +13,7 @@ RUN apk update \
   # Translations dependencies
   && apk add gettext \
   # https://docs.djangoproject.com/en/dev/ref/django-admin/#dbshell
-  && apk add mysql-client \
-  && apk add --update --no-cache g++ gcc libxslt-dev
+  && apk add mysql-client 
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements /requirements

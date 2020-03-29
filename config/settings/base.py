@@ -132,4 +132,4 @@ REST_FRAMEWORK = {
 
 # Your stuff...
 # ------------------------------------------------------------------------------
-DISCORD_TOKEN = env.db("DISCORD_TOKEN")
+DISCORD_TOKEN = env.str('DISCORD_TOKEN')

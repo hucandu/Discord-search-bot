@@ -6,7 +6,7 @@ Deployment steps are mentioned in [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ## Development
 
-Some helper commands only for development machine 
+Some helper commands only for development machine
 [django-extensions](https://django-extensions.readthedocs.io/en/latest/command_extensions.html)
 
 Create environment configuration
@@ -35,14 +35,14 @@ $(venv) pip install -r requirements/local.txt
 ```
 
 Start Server
-```sh 
+```sh
 $(venv) python manage.py runserver 0.0.0.0:8000
 ```
 
 ### Using Docker
 
 Build Image
-```sh 
+```sh
 $ docker-compose -f docker-compose.dev.yml build
 ```
 

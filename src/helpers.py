@@ -1,3 +1,4 @@
+import base64
 import random
 from src.constants import (
     SEARCH_TRIGGER_KEYWORD,
@@ -156,3 +157,15 @@ class SearchBotHelpers:
         description = description
         embed = client.Embed(title=title, description=description, color=color_code)
         return embed
+
+    @staticmethod
+    def base_64_encode(string):
+        return base64.b64encode(string.encode("utf-8"))
+
+    @staticmethod
+    def base_64_decode(string):
+        return base64.b64decode(e).decode("utf-8")
+
+    @staticmethod
+    def construct_username(name, discriminator):
+        return "{name}#{code}".format(name=name, code=discriminator)
